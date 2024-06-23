@@ -8,10 +8,10 @@ from langchain.vectorstores import FAISS
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 
-# import os
-# from dotenv import load_dotenv
+import os
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 prompt_template = """
 Human: Use the following pieces of context to provide a 
@@ -24,10 +24,14 @@ just say that you don't know, don't try to make up an answer.
 Question: {question}
 Assistant:"""
 
-region_name = "us-east-1"
+aws_access_key_id = os.getenv("aws_access_key_id")
+aws_secret_access_key = os.getenv("aws_secret_access_key")
+region_name = os.getenv("region_name")
 
 #Bedrock client
 bedrock_client = boto3.client(service_name = "bedrock-runtime", 
+                       aws_access_key_id = aws_access_key_id,
+                       aws_secret_access_key = aws_secret_access_key,
                        region_name = region_name)
 
 #Get embeddings model from bedrock
