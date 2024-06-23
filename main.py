@@ -24,22 +24,10 @@ just say that you don't know, don't try to make up an answer.
 Question: {question}
 Assistant:"""
 
-aws_access_key_id = os.getenv("aws_access_key_id")
-aws_secret_access_key = os.getenv("aws_secret_access_key")
-region_name = os.getenv("region_name")
-
-print(aws_access_key_id)
-print(aws_secret_access_key)
-print(region_name)
-
-aws_access_key_id = ""
-aws_secret_access_key = ""
-region_name = ""
+region_name = "us-east-1"
 
 #Bedrock client
 bedrock_client = boto3.client(service_name = "bedrock-runtime", 
-                       aws_access_key_id = aws_access_key_id,
-                       aws_secret_access_key = aws_secret_access_key,
                        region_name = region_name)
 
 #Get embeddings model from bedrock
