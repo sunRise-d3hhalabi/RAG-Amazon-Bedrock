@@ -8,10 +8,10 @@ from langchain.vectorstores import FAISS
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 
-import os
-from dotenv import load_dotenv
+# import os
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 prompt_template = """
 Human: Use the following pieces of context to provide a 
