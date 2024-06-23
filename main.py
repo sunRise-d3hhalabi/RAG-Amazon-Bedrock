@@ -32,9 +32,9 @@ print(aws_access_key_id)
 print(aws_secret_access_key)
 print(region_name)
 
-aws_access_key_id = "AKIAW3MEBGOHGN7IR3VE"
-aws_secret_access_key = "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"
-region_name = "us-east-1"
+aws_access_key_id = ""
+aws_secret_access_key = ""
+region_name = ""
 
 #Bedrock client
 bedrock_client = boto3.client(service_name = "bedrock-runtime", 
